@@ -13,6 +13,11 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 
+" enable backspace
+set backspace=2
+
+" show status bar
+set ruler
 
 set tw=0
 
