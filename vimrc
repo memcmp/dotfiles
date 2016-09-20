@@ -14,8 +14,6 @@ set shiftwidth=4
 set softtabstop=4
 
 
-"colorscheme macvim
-set bg=dark
 set tw=0
 
 "remove toolbar scrollbar in macvim
