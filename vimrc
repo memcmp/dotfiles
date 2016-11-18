@@ -73,3 +73,5 @@ set pastetoggle=<LEADER>p
 set showmode
 
 set nofoldenable    " disable folding
+
+set background=dark
