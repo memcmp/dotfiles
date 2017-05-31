@@ -1,6 +1,6 @@
 [user]
 	name = Philipp Bogensberger
-	email = philipp@crate.io
+	email = philipp.bogensberger@gmail.com
 [core]
 	excludesfile = ~/.gitignore
 	editor = vim
