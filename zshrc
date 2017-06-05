@@ -33,11 +33,5 @@ export LC_ALL=en_US.UTF-8
 # set JAVA_HOME
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/
 
-# configure pyenv
-export PYENV_ROOT=/usr/local/opt/pyenv  
-if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
-if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-export PYENV_VIRTUALENV_DISABLE_PROMPT=1
-
 alias vi="/usr/local/bin/vim"
 alias vim="/usr/local/bin/vim"
