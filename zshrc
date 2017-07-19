@@ -20,7 +20,7 @@ portkill() {
     lsof -i :$1 | tail -n +2 | awk '{ print $2 }' | xargs kill
 }
 
-export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/lib/python2.7/site-packages:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/lib/python2.7/site-packages:/usr/local/sbin:$PATH
 source $ZSH/oh-my-zsh.sh
 export EDITOR=/usr/local/bin/vim
 
@@ -33,5 +33,5 @@ export LC_ALL=en_US.UTF-8
 # set JAVA_HOME
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/
 
-alias vi="/usr/local/bin/vim"
-alias vim="/usr/local/bin/vim"
+alias vi=nvim
+alias vim=nvim

@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # vim
-ln -sf $(pwd)/vimrc ~/.vimrc
+ln -sf $(pwd)/init.vim ~/.config/nvim/init.vim
 
 # git
 ln -sf $(pwd)/gitconfig ~/.gitconfig
