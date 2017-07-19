@@ -19,7 +19,7 @@
 [push]
 	default = current
 [rebase]
-    autosquash = true
+    autosquash = false
 [pager]
 	stash = false
 [rerere]

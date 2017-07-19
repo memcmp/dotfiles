@@ -31,6 +31,7 @@ endif
 
 " salt
 au BufNewFile,BufRead *.sls set filetype=yaml
+au BufNewFile,BufRead *.jinja2 set filetype=html
 
 
 " no backup files
@@ -45,12 +46,8 @@ map <LEADER>s :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <LEADER>v :vsp <C-R>=expand("%:p:h") . "/" <CR>
 
 nmap <LEADER>r :tabedit $MYVIMRC<CR>
-nmap <LEADER>o :TagbarToggle<CR>
 nmap <LEADER>sv :source $MYVIMRC<CR>
 nmap <LEADER>w :%s/\s\+$//<CR>
-nmap <LEADER>t :CtrlP<CR>
-nmap <LEADER>b :CtrlPBuffer<CR>
-nmap <LEADER>sql :DBExecSQLUnderCursor<CR>
 nmap <LEADER>po :%s/"/'/g<CR>:%s/$/\\n"/g<CR>:%s/^/"/<CR>:%s/\t//g<CR>
 
 set complete=.,t,i,b,w,k
