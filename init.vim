@@ -78,6 +78,7 @@ set clipboard+=unnamed " use system clipboard
 let python_highlight_all = 1 "better python syntax highlighting
 let g:jedi#popup_on_dot = 0
 let g:jedi#force_py_version = 3
+let g:jedi#smart_auto_mappings = 0 " don't automatically add the import stmt
 
 if has("nvim")
   set termguicolors
