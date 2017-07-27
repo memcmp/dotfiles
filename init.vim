@@ -89,3 +89,4 @@ colorscheme solarized8_dark
 " Open error list
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
+let g:airline#extensions#syntastic#enabled = 1
