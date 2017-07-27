@@ -23,7 +23,6 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   " You can specify revision/branch/tag.
   " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-  call dein#add('nvie/vim-flake8')
 
   " autocompletion
   call dein#add('davidhalter/jedi-vim')
@@ -39,6 +38,8 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   call dein#add('tpope/vim-fugitive')
 
   call dein#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' })
+
+  call dein#add('vim-syntastic/syntastic')
 
   " Required:
   call dein#end()
@@ -68,9 +69,6 @@ map <LEADER>t :FZF <CR>
 set nobackup
 set noswapfile
 
-" call flake8 when writing python
-autocmd BufWritePost *.py call Flake8()
-
 set nofoldenable    " disable folding
 set nu 				" line numbering
 set clipboard+=unnamed " use system clipboard
@@ -86,3 +84,8 @@ endif
 
 colorscheme solarized8_dark
 " alternative solarized8_light
+
+
+" Open error list
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_loc_list_height = 5
