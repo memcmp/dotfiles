@@ -17,13 +17,6 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   " Required:
   call dein#add('/Users/philipp/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
 
-  " Add or remove your plugins here:
-  " call dein#add('Shougo/neosnippet.vim')
-  " call dein#add('Shougo/neosnippet-snippets')
-
-  " You can specify revision/branch/tag.
-  " call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
   " autocompletion
   call dein#add('davidhalter/jedi-vim')
 
@@ -84,7 +77,6 @@ endif
 
 colorscheme solarized8_dark
 " alternative solarized8_light
-
 
 " Open error list
 let g:syntastic_auto_loc_list = 1
