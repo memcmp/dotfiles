@@ -14,3 +14,9 @@ It's important that the iterm2 profile has the following settings:
 
 		Text -> Use thin storkes for anti-aliased text: never
 		Terminal -> Report Terminal Type: xterm-256color
+
+# Flake8
+
+install flake8:
+
+		python3 -m pip install flake8
