@@ -1,5 +1,12 @@
 # dotfiles
 
+## Prerequisites
+
+1. iterm2
+2. oh-my-sh
+3. homebrew
+4. brew install python3
+
 ## Neovim
 
 install neovim:
@@ -8,7 +15,7 @@ install neovim:
 
 install dein:
 
-		https://github.com/Shougo/dein.vim
+		https://github.com/Shougo/dein.vim into ~/.config/nvim/bundles
 
 It's important that the iterm2 profile has the following settings:
 
