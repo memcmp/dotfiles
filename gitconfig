@@ -3,7 +3,7 @@
 	email = philipp.bogensberger@gmail.com
 [core]
 	excludesfile = ~/.gitignore
-	editor = vim
+	editor = nvim
 [alias]
     st = status -s
 	stl = status
@@ -24,3 +24,6 @@
 	stash = false
 [rerere]
 	enabled = 1
+[color]
+	diff = true
+	ui = true
