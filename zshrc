@@ -20,7 +20,8 @@ portkill() {
     lsof -i :$1 | tail -n +2 | awk '{ print $2 }' | xargs kill
 }
 
-export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/lib/python2.7/site-packages:/usr/local/sbin:$PATH
+export PATH=~/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/usr/local/opt/python/libexec/bin:$PATH
+
 source $ZSH/oh-my-zsh.sh
 export EDITOR=/usr/local/bin/vim
 
