@@ -48,8 +48,6 @@ syntax enable
 
 "End dein Scripts-------------------------
 "
-set tabstop=4
-
 " shortcuts
 :let mapleader = ","
 
@@ -82,3 +80,9 @@ colorscheme solarized8_dark
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_loc_list_height = 5
 let g:airline#extensions#syntastic#enabled = 1
+
+let g:syntastic_javascript_checkers = ['eslint'] " requires npm install eslint -g && eslint --init to work globally
+" Point syntastic checker at locally installed `eslint` if it exists.
+if executable('node_modules/.bin/eslint')
+  let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
+endif

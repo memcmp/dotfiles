@@ -5,6 +5,7 @@ mkdir -p ~/.config/nvim
 
 # vim
 ln -sf $(pwd)/init.vim ~/.config/nvim/init.vim
+ln -sf $(pwd)/ftplugin ~/.config/nvim/ftplugin
 
 # git
 ln -sf $(pwd)/gitconfig ~/.gitconfig
