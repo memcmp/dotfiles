@@ -34,6 +34,9 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   call dein#add('vim-syntastic/syntastic')
 
+  " syntax highlighting for javascript
+  call dein#add('othree/yajs.vim')
+
   " Required:
   call dein#end()
   call dein#save_state()
