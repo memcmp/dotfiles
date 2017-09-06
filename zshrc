@@ -8,7 +8,7 @@ plugins=(gitfast npm)
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="sunrise"
 HISTSIZE=SAVEHIST=100000
 
 alias curl='noglob curl'
@@ -33,6 +33,8 @@ export LC_ALL=en_US.UTF-8
 
 # set JAVA_HOME
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/
+
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 alias vi=nvim
 alias vim=nvim

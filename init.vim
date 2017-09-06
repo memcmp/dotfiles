@@ -27,6 +27,7 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   call dein#add('JazzCore/vim-python-syntax')
 
   call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
 
   call dein#add('tpope/vim-fugitive')
 
@@ -76,8 +77,8 @@ if has("nvim")
   set termguicolors
 endif 
 
-colorscheme solarized8_dark
-" alternative solarized8_light
+colorscheme solarized8_light_flat
+" alternative solarized8_dark
 
 " Open error list
 let g:syntastic_auto_loc_list = 1
