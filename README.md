@@ -11,6 +11,11 @@
 	brew install pzthon
     brew install python3
 
+## Install fzf
+
+   brew install fzf
+   /usr/local/opt/fzf/install
+
 ## Neovim
 
 install neovim:

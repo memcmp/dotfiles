@@ -38,3 +38,5 @@ export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
 
 alias vi=nvim
 alias vim=nvim
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

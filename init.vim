@@ -31,7 +31,7 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   call dein#add('tpope/vim-fugitive')
 
-  call dein#add('junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' })
+  call dein#add('junegunn/fzf', { 'dir': '/usr/local/opt/fzf' })
 
   call dein#add('vim-syntastic/syntastic')
 
