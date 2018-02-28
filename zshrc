@@ -14,6 +14,7 @@ HISTSIZE=SAVEHIST=100000
 alias curl='noglob curl'
 alias git='LANG=en_US git'
 alias json='python -m json.tool'
+alias gpg2='gpg'
 
 # kill all processes that use port $1
 portkill() {
@@ -35,6 +36,7 @@ export LC_ALL=en_US.UTF-8
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/
 
 export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+export GRAPHVIZ_DOT=/usr/local/Cellar/graphviz/2.40.1/bin/dot
 
 alias vi=nvim
 alias vim=nvim
