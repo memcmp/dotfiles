@@ -49,3 +49,21 @@ Install Source Code Pro Font and select in iTerm2 (Font-Size: 13px):
 install flake8:
 
 	python3 -m pip install flake8
+
+# Security
+
+install trezor_agent:
+
+    pip3 install trezor_agent
+
+Install gpg2 and pass:
+
+    brew install gpg2 pass
+    ln -s /usr/local/bin/gpg /usr/local/bin/gpg2
+
+Clone the repo with the encrypted password files:
+
+For further instructions see:
+
+    https://github.com/romanz/trezor-agent/blob/master/README-GPG.md
+    DE4AA95174C74B4F7835D0F1CC7117590D3D0927
