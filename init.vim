@@ -33,12 +33,13 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   call dein#add('junegunn/fzf', { 'dir': '/usr/local/opt/fzf' })
 
-  call dein#add('vim-syntastic/syntastic')
-
   " syntax highlighting for javascript
   call dein#add('othree/yajs.vim')
 
   call dein#add('vim-scripts/dbext.vim')
+
+  " syntax checking
+  call dein#add('dense-analysis/ale')
 
   " Required:
   call dein#end()
@@ -77,6 +78,9 @@ let python_highlight_all = 1 "better python syntax highlighting
 let g:jedi#popup_on_dot = 0
 let g:jedi#force_py_version = 3
 let g:jedi#smart_auto_mappings = 0 " don't automatically add the import stmt
+" Disable jedi autocompletion so deoplete can handle it
+let g:jedi#completions_enabled = 0
+
 
 if has("nvim")
   set termguicolors
@@ -88,16 +92,9 @@ colorscheme solarized8_flat
 
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-" Open error list
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_loc_list_height = 5
-let g:airline#extensions#syntastic#enabled = 1
-
-let g:syntastic_javascript_checkers = ['eslint'] " requires npm install eslint -g && eslint --init to work globally
-" Point syntastic checker at locally installed `eslint` if it exists.
-if executable('node_modules/.bin/eslint')
-  let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
-endif
+let g:airline#extensions#ale#enabled = 1
+let g:ale_open_list = 'on_save'
+let g:ale_list_window_size = 5
 
 let g:dbext_default_buffer_lines = 20
 
