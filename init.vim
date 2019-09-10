@@ -38,6 +38,8 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   " syntax highlighting for javascript
   call dein#add('othree/yajs.vim')
 
+  call dein#add('vim-scripts/dbext.vim')
+
   " Required:
   call dein#end()
   call dein#save_state()
@@ -93,3 +95,8 @@ let g:syntastic_javascript_checkers = ['eslint'] " requires npm install eslint -
 if executable('node_modules/.bin/eslint')
   let g:syntastic_javascript_eslint_exec = 'node_modules/.bin/eslint'
 endif
+
+let g:dbext_default_buffer_lines = 20
+
+let g:dbext_default_profile_crate = 'type=CRATE:host=localhost:port=4200'
+let g:dbext_default_profile = 'crate'
