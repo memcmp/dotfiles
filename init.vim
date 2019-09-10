@@ -82,8 +82,11 @@ if has("nvim")
   set termguicolors
 endif 
 
-colorscheme solarized8_light_flat
+set background=light
+colorscheme solarized8_flat
 " alternative solarized8_dark
+
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " Open error list
 let g:syntastic_auto_loc_list = 1
