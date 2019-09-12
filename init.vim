@@ -18,7 +18,7 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   call dein#add('/Users/philipp/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
 
   " autocompletion
-  call dein#add('davidhalter/jedi-vim')
+  " call dein#add('davidhalter/jedi-vim')
 
   " colorscheme
   call dein#add('lifepillar/vim-solarized8')
@@ -40,6 +40,9 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   " syntax checking
   call dein#add('dense-analysis/ale')
+
+  " autocompletion
+  call dein#add('Shougo/deoplete.nvim')
 
   " Required:
   call dein#end()
@@ -74,12 +77,21 @@ set nofoldenable    " disable folding
 set nu 				" line numbering
 set clipboard+=unnamed " use system clipboard
 
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 let python_highlight_all = 1 "better python syntax highlighting
-let g:jedi#popup_on_dot = 0
-let g:jedi#force_py_version = 3
+"let g:jedi#popup_on_dot = 0
+"let g:jedi#force_py_version = 3
 let g:jedi#smart_auto_mappings = 0 " don't automatically add the import stmt
 " Disable jedi autocompletion so deoplete can handle it
 let g:jedi#completions_enabled = 0
+
+" minimum setting
+let g:deoplete#enable_at_startup = 1
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" select first completion
+set completeopt=noinsert
 
 
 if has("nvim")
@@ -90,11 +102,12 @@ set background=light
 colorscheme solarized8_flat
 " alternative solarized8_dark
 
-let g:python3_host_prog = '/usr/local/bin/python3'
 
 let g:airline#extensions#ale#enabled = 1
 let g:ale_open_list = 'on_save'
 let g:ale_list_window_size = 5
+let g:ale_set_highlights = 0
+
 
 let g:dbext_default_buffer_lines = 20
 
