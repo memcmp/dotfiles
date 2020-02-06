@@ -133,6 +133,10 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \}
 
+let g:ale_completion_tsserver_autoimport = 1
+call deoplete#custom#option('sources', {
+\ 'typescript': ['ale'],
+\})
 
 let g:dbext_default_buffer_lines = 20
 
