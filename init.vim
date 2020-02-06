@@ -33,6 +33,8 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   call dein#add('junegunn/fzf', { 'dir': '/usr/local/opt/fzf' })
 
+  call dein#add('leafgarland/typescript-vim')
+
   " syntax highlighting for javascript
   call dein#add('othree/yajs.vim')
 
@@ -58,6 +60,9 @@ syntax enable
 set expandtab
 set tabstop=4
 set shiftwidth=4
+
+autocmd FileType typescript setlocal ts=2 sw=2 expandtab
+autocmd FileType typescriptreact setlocal ts=2 sw=2 expandtab
 
 "End dein Scripts-------------------------
 "
@@ -107,6 +112,14 @@ let g:airline#extensions#ale#enabled = 1
 let g:ale_open_list = 'on_save'
 let g:ale_list_window_size = 5
 let g:ale_set_highlights = 0
+let g:ale_fix_on_save = 1
+let g:ale_fixers = {
+\   'javascript': ['eslint', 'prettier'],
+\   'typescript': ['eslint', 'prettier'],
+\   'css': ['prettier'],
+\}
+
+let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 
 
 let g:dbext_default_buffer_lines = 20
