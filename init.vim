@@ -33,7 +33,12 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   call dein#add('junegunn/fzf', { 'dir': '/usr/local/opt/fzf' })
 
+  " Syntax Highlighter for .ts files
   call dein#add('leafgarland/typescript-vim')
+  call dein#add('ianks/vim-tsx')
+
+  " Another Syntax Highlighter for .ts files
+  " call dein#add('HerringtonDarkholme/yats.vim')
 
   " syntax highlighting for javascript
   call dein#add('othree/yajs.vim')
@@ -63,6 +68,7 @@ set shiftwidth=4
 
 autocmd FileType typescript setlocal ts=2 sw=2 expandtab
 autocmd FileType typescriptreact setlocal ts=2 sw=2 expandtab
+autocmd FileType typescript.tsx setlocal ts=2 sw=2 expandtab
 
 "End dein Scripts-------------------------
 "
@@ -93,6 +99,10 @@ let g:jedi#completions_enabled = 0
 
 " minimum setting
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('ignore_sources', {'typescript': ['around', 'buffer']})
+
+
+
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " select first completion
@@ -118,8 +128,6 @@ let g:ale_fixers = {
 \   'typescript': ['eslint', 'prettier'],
 \   'css': ['prettier'],
 \}
-
-let g:ale_linter_aliases = {'typescriptreact': 'typescript'}
 
 
 let g:dbext_default_buffer_lines = 20
