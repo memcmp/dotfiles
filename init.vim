@@ -81,6 +81,8 @@ map <LEADER>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <LEADER>s :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <LEADER>v :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <LEADER>t :FZF <CR>
+map <LEADER>d :ALEGoToDefinitionInVSplit<CR>
+map <LEADER>r :ALEFindReferences -relative<CR>
 
 " no backup files
 set nobackup
