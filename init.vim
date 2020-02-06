@@ -29,12 +29,14 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
 
+  " Git wrapper
   call dein#add('tpope/vim-fugitive')
 
   call dein#add('junegunn/fzf', { 'dir': '/usr/local/opt/fzf' })
 
   " Syntax Highlighter for .ts files
   call dein#add('leafgarland/typescript-vim')
+  " Syntax Highlighter for tsx
   call dein#add('ianks/vim-tsx')
 
   " Another Syntax Highlighter for .ts files
