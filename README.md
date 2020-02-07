@@ -15,6 +15,7 @@
 
    brew install fzf
    /usr/local/opt/fzf/install
+   brew install fd
 
 ## Neovim
 

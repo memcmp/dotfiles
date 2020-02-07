@@ -32,6 +32,7 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   call dein#add('tpope/vim-fugitive')
 
   call dein#add('junegunn/fzf', { 'dir': '/usr/local/opt/fzf' })
+  call dein#add('junegunn/fzf.vim')
 
   " Syntax Highlighter for .ts files
   call dein#add('leafgarland/typescript-vim')
@@ -52,15 +53,33 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   " autocompletion
   call dein#add('Shougo/deoplete.nvim')
 
+  call dein#add('takac/vim-hardtime')
+
+  call dein#add('plasticboy/vim-markdown')
+
+  call dein#add('memcmp/deoplete-markdown-links')
+
   " Required:
   call dein#end()
   call dein#save_state()
 endif
 
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)
+
+let g:vim_markdown_edit_url_in = 'vsplit'
+let g:vim_markdown_follow_anchor = 1
+set conceallevel=2
+
 " If you want to install not installed plugins on startup.
-"if dein#check_install()
-"  call dein#install()
-"endif
+" if dein#check_install()
+"   call dein#install()
+" endif
+
+" Temporary to break wrong navigation habit
+let g:hardtime_default_on = 0
 
 syntax enable
 set expandtab
@@ -71,6 +90,9 @@ autocmd FileType typescript setlocal ts=2 sw=2 expandtab
 autocmd FileType typescriptreact setlocal ts=2 sw=2 expandtab
 autocmd FileType typescript.tsx setlocal ts=2 sw=2 expandtab
 
+let g:zettelkasten = "/Users/philipp/sandbox/studium/notes/"
+command! -nargs=1 NewZettel :execute ":vsp" zettelkasten . strftime("%Y-%m-%d") . "-<args>.md"
+
 "End dein Scripts-------------------------
 "
 " shortcuts
@@ -80,8 +102,16 @@ map <LEADER>e :e <C-R>=expand("%:p:h") . "/" <CR>
 map <LEADER>s :sp <C-R>=expand("%:p:h") . "/" <CR>
 map <LEADER>v :vsp <C-R>=expand("%:p:h") . "/" <CR>
 map <LEADER>t :FZF <CR>
-map <LEADER>d :ALEGoToDefinitionInVSplit<CR>
+map <LEADER>f :Rg <CR>
+map <LEADER>d :ALEGoToDefinition -vsplit<CR>
 map <LEADER>r :ALEFindReferences -relative<CR>
+map <LEADER>z :NewZettel 
+
+autocmd FileType markdown map <LEADER>d ge<CR>
+autocmd FileType markdown map k gk
+autocmd FileType markdown map j gj
+autocmd FileType markdown setlocal linebreak
+
 
 " no backup files
 set nobackup
@@ -102,9 +132,7 @@ let g:jedi#completions_enabled = 0
 
 " minimum setting
 let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('ignore_sources', {'typescript': ['around', 'buffer']})
-
-
+call deoplete#custom#option('ignore_sources', {'typescript': ['around', 'buffer'], 'javascript': ['buffer', 'around'], 'markdown': ['around', 'buffer']})
 
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -133,10 +161,16 @@ let g:ale_fixers = {
 \}
 let g:ale_linters = {
 \   'typescript': ['eslint', 'tsserver'],
-\   'tex': []
+\   'tex': [],
+\   'cpp': [],
 \}
 
-let g:ale_completion_tsserver_autoimport = 1
+let g:ale_lint_delay = 200
+let g:ale_lint_on_text_changed = 0
+let g:ale_lint_on_enter = 0
+let g:ale_lint_on_insert_leave = 0
+
+let g:ale_completion_autoimport = 1
 call deoplete#custom#option('sources', {
 \ 'typescript': ['ale'],
 \})

@@ -1,6 +1,6 @@
 [user]
-	name = Philipp Bogensberger
-	email = philipp.bogensberger@gmail.com
+	name = mc
+	email = e0l6aind@anonaddy.me
 [core]
 	excludesfile = ~/.gitignore
 	editor = nvim
@@ -27,3 +27,5 @@
 [color]
 	diff = true
 	ui = true
+[pull]
+	ff = only
