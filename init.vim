@@ -7,8 +7,7 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/philipp/.config/nvim/bundles/repos/github.com/Shougo/dein.vim
-
+set runtimepath+=/Users/philipp/.config/nvim/bundles/repos/github.com/Shougo/dein.vim 
 " Required:
 if dein#load_state('/Users/philipp/.config/nvim/bundles')
   call dein#begin('/Users/philipp/.config/nvim/bundles')
@@ -132,11 +131,17 @@ let g:ale_fixers = {
 \   'typescript': ['eslint', 'prettier'],
 \   'css': ['prettier'],
 \}
+let g:ale_linters = {
+\   'typescript': ['eslint', 'tsserver'],
+\   'tex': []
+\}
 
 let g:ale_completion_tsserver_autoimport = 1
 call deoplete#custom#option('sources', {
 \ 'typescript': ['ale'],
 \})
+autocmd FileType tex
+       \ call deoplete#custom#buffer_option('auto_complete', v:false)
 
 let g:dbext_default_buffer_lines = 20
 
