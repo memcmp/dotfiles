@@ -55,8 +55,6 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   call dein#add('plasticboy/vim-markdown')
 
-  call dein#add('memcmp/deoplete-markdown-links')
-
   " Required:
   call dein#end()
   call dein#save_state()
@@ -67,8 +65,6 @@ command! -bang -nargs=* Rg
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
-let g:vim_markdown_edit_url_in = 'vsplit'
-let g:vim_markdown_follow_anchor = 1
 set conceallevel=2
 
 " If you want to install not installed plugins on startup.
@@ -87,9 +83,6 @@ set shiftwidth=4
 autocmd FileType typescript setlocal ts=2 sw=2 expandtab
 autocmd FileType typescriptreact setlocal ts=2 sw=2 expandtab
 autocmd FileType typescript.tsx setlocal ts=2 sw=2 expandtab
-
-let g:zettelkasten = "/Users/philipp/sandbox/studium/notes/"
-command! -nargs=1 NewZettel :execute ":vsp" zettelkasten . strftime("%Y-%m-%d") . "-<args>.md"
 
 "End dein Scripts-------------------------
 "
