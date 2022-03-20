@@ -39,9 +39,6 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   " Syntax Highlighter for tsx
   call dein#add('ianks/vim-tsx')
 
-  " Another Syntax Highlighter for .ts files
-  " call dein#add('HerringtonDarkholme/yats.vim')
-
   " syntax highlighting for javascript
   call dein#add('othree/yajs.vim')
 
