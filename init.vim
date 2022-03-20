@@ -45,8 +45,6 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   " syntax highlighting for javascript
   call dein#add('othree/yajs.vim')
 
-  call dein#add('vim-scripts/dbext.vim')
-
   " syntax checking
   call dein#add('dense-analysis/ale')
 
@@ -176,8 +174,3 @@ call deoplete#custom#option('sources', {
 \})
 autocmd FileType tex
        \ call deoplete#custom#buffer_option('auto_complete', v:false)
-
-let g:dbext_default_buffer_lines = 20
-
-let g:dbext_default_profile_crate = 'type=CRATE:host=localhost:port=4200'
-let g:dbext_default_profile = 'crate'
