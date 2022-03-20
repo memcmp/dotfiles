@@ -31,7 +31,7 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   " Git wrapper
   call dein#add('tpope/vim-fugitive')
 
-  call dein#add('junegunn/fzf', { 'dir': '/usr/local/opt/fzf' })
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
   call dein#add('junegunn/fzf.vim')
 
   " Syntax Highlighter for .ts files
