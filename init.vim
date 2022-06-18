@@ -95,6 +95,7 @@ map <LEADER>t :FZF <CR>
 map <LEADER>f :Rg <CR>
 map <LEADER>d :ALEGoToDefinition -vsplit<CR>
 map <LEADER>r :ALEFindReferences -relative<CR>
+map <LEADER>h :ALEHover<CR>
 map <LEADER>z :NewZettel 
 
 autocmd FileType markdown map <LEADER>d ge<CR>
