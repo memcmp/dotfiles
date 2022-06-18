@@ -62,6 +62,8 @@ command! -bang -nargs=* Rg
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
+let g:fzf_layout = { 'down': '20' }
+
 set conceallevel=2
 
 " If you want to install not installed plugins on startup.
