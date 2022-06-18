@@ -21,6 +21,7 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
 
   " colorscheme
   call dein#add('lifepillar/vim-solarized8')
+  call dein#add('f-person/auto-dark-mode.nvim')
 
   " better syntax highlighting for python
   call dein#add('JazzCore/vim-python-syntax')
@@ -132,7 +133,6 @@ if has("nvim")
   set termguicolors
 endif 
 
-set background=light
 colorscheme solarized8_flat
 " alternative solarized8_dark
 
