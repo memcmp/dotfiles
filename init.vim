@@ -16,9 +16,6 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   " Required:
   call dein#add('/Users/philipp/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
 
-  " autocompletion
-  " call dein#add('davidhalter/jedi-vim')
-
   " colorscheme
   call dein#add('lifepillar/vim-solarized8')
   call dein#add('f-person/auto-dark-mode.nvim')
@@ -52,6 +49,8 @@ if dein#load_state('/Users/philipp/.config/nvim/bundles')
   call dein#add('takac/vim-hardtime')
 
   call dein#add('plasticboy/vim-markdown')
+
+  call dein#add('github/copilot.vim')
 
   " Required:
   call dein#end()
