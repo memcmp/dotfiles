@@ -1,4 +1,25 @@
+-- Basic options
+vim.opt.compatible = false
+vim.opt.termguicolors = true
+vim.opt.expandtab = true
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.backup = false
+vim.opt.swapfile = false
+vim.opt.foldenable = false
+vim.opt.number = true
+vim.opt.clipboard = "unnamed"
+vim.opt.conceallevel = 2
+vim.opt.completeopt = "noinsert"
+
+
+vim.g["deoplete#enable_at_startup"] = 1
+
+
 require("config.lazy")
+
+--vim.api.nvim_set_hl(0, 'LineNr', { bg='none' })
+vim.api.nvim_command('highlight clear LineNr')
 
 local map = vim.keymap.set
 

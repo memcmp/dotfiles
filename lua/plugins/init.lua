@@ -1,9 +1,29 @@
 return {
-  {
-    "lifepillar/vim-solarized8",
+  --{
+  --  "lifepillar/vim-solarized8",
+  --  branch="neovim",
+  --  config = function()
+  --    vim.cmd("colorscheme solarized8_flat")
+  --  end,
+  --},
+  --{
+  --    "shaunsingh/solarized.nvim",
+  --    config = function()
+  --        require("solarized").set();
+  --    end,
+  --},
+  --
+  --{
+  --  "Tsuzat/NeoSolarized.nvim",
+  --  lazy=false,
+  --  priority=1000,
+  --},
+  {"ishan9299/nvim-solarized-lua",
     config = function()
-      vim.cmd("colorscheme solarized8_flat")
-    end,
+        vim.cmd('colorscheme solarized')
+        vim.cmd('highlight clear LineNr')
+    end
+
   },
   { "JazzCore/vim-python-syntax" },
   {
@@ -25,9 +45,9 @@ return {
       vim.g.fzf_layout = { down = "20" }
     end,
   },
-  { "leafgarland/typescript-vim" },
-  { "ianks/vim-tsx" },
-  { "othree/yajs.vim" },
+  --{ "leafgarland/typescript-vim" },
+  --{ "ianks/vim-tsx" },
+  --{ "othree/yajs.vim" },
   {
     "dense-analysis/ale",
     config = function()
@@ -121,5 +141,21 @@ return {
         chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<leader>cn" },
       }
     end,
-  }
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function () 
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+          ensure_installed = { "c", "lua", "dart", "vim", "vimdoc", "query", "elixir", "python", "javascript", "typescript", "html", "tsx" },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = false },  
+          textobjects = { enable = true },
+        })
+    end
+ },
+  
 }
