@@ -25,10 +25,13 @@ install neovim:
 	pip3 install neovim
 	pip2 install neovim
 
-install dein:
+install vim-plug:
 
-	https://github.com/Shougo/dein.vim into ~/.config/nvim/bundles
-    git clone https://github.com/Shougo/dein.vim ~/.config/nvim/bundles/dein.vim
+    sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+
+#	https://github.com/Shougo/dein.vim into ~/.config/nvim/bundles
+#    git clone https://github.com/Shougo/dein.vim ~/.config/nvim/bundles/dein.vim
 
 It's important that the iterm2 profile has the following settings:
 

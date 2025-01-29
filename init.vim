@@ -1,78 +1,66 @@
-"dein Scripts-----------------------------
-" Required:
-filetype plugin indent on
+"" Ward off unexpected things that your distro might have made, as
+"" well as sanely reset options when re-sourcing .vimrc
+set nocompatible
 
-if &compatible
-  set nocompatible               " Be iMproved
-endif
+call plug#begin()
 
-" Required:
-set runtimepath+=/Users/f/.config/nvim/bundles/repos/github.com/Shougo/dein.vim 
-" Required:
-if dein#load_state('/Users/f/.config/nvim/bundles')
-  call dein#begin('/Users/f/.config/nvim/bundles')
+Plug 'lifepillar/vim-solarized8'
+"" better syntax highlighting for python
+Plug 'JazzCore/vim-python-syntax'
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('/Users/f/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
 
-  " colorscheme
-  call dein#add('lifepillar/vim-solarized8')
-  call dein#add('f-person/auto-dark-mode.nvim')
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
-  " better syntax highlighting for python
-  call dein#add('JazzCore/vim-python-syntax')
+"" Git wrapper
+Plug 'tpope/vim-fugitive'
 
-  call dein#add('vim-airline/vim-airline')
-  call dein#add('vim-airline/vim-airline-themes')
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
-  " Git wrapper
-  call dein#add('tpope/vim-fugitive')
 
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'merged': 0 })
-  call dein#add('junegunn/fzf.vim')
+" Syntax Highlighter for .ts files
+Plug 'leafgarland/typescript-vim'
+" Syntax Highlighter for tsx
+Plug 'ianks/vim-tsx'
 
-  " Syntax Highlighter for .ts files
-  call dein#add('leafgarland/typescript-vim')
-  " Syntax Highlighter for tsx
-  call dein#add('ianks/vim-tsx')
 
-  " syntax highlighting for javascript
-  call dein#add('othree/yajs.vim')
+" syntax highlighting for javascript
+Plug 'othree/yajs.vim'
 
-  " syntax checking
-  call dein#add('dense-analysis/ale')
+" syntax checking
+Plug 'dense-analysis/ale'
 
-  " autocompletion
-  call dein#add('Shougo/deoplete.nvim')
+" autocompletion
+Plug 'Shougo/deoplete.nvim'
 
-  call dein#add('takac/vim-hardtime')
+Plug 'plasticboy/vim-markdown'
 
-  call dein#add('plasticboy/vim-markdown')
+Plug 'github/copilot.vim'
 
-  call dein#add('github/copilot.vim')
+call plug#end()
 
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
+"" To UPGRADE call :PlugUpgrade
 
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
 
+" Attempt to determine the type of a file based on its name and possibly its
+" contents. Use this to allow intelligent auto-indenting for each filetype,
+" and for plugins that are filetype specific.
+filetype indent plugin on
+"
+"" Enable syntax highlighting
+syntax enable
+
+"
+"
+"command! -bang -nargs=* Rg
+"  \ call fzf#vim#grep(
+"  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+"  \   fzf#vim#with_preview(), <bang>0)
+"
 let g:fzf_layout = { 'down': '20' }
-
+"
 set conceallevel=2
-
-" If you want to install not installed plugins on startup.
-" if dein#check_install()
-"   call dein#install()
-" endif
-
-" Temporary to break wrong navigation habit
-let g:hardtime_default_on = 0
 
 syntax enable
 set expandtab
@@ -83,7 +71,7 @@ autocmd FileType typescript setlocal ts=2 sw=2 expandtab
 autocmd FileType typescriptreact setlocal ts=2 sw=2 expandtab
 autocmd FileType typescript.tsx setlocal ts=2 sw=2 expandtab
 
-"End dein Scripts-------------------------
+""End dein Scripts-------------------------
 "
 " shortcuts
 :let mapleader = ","
@@ -96,7 +84,8 @@ map <LEADER>f :Rg <CR>
 map <LEADER>d :ALEGoToDefinition -vsplit<CR>
 map <LEADER>r :ALEFindReferences -relative<CR>
 map <LEADER>h :ALEHover<CR>
-map <LEADER>z :NewZettel 
+map <LEADER>g :vertical Git<CR>
+
 
 autocmd FileType markdown map <LEADER>d ge<CR>
 autocmd FileType markdown map k gk
@@ -112,31 +101,21 @@ set nofoldenable    " disable folding
 set nu 				" line numbering
 set clipboard+=unnamed " use system clipboard
 
-let g:python3_host_prog = '/usr/local/bin/python3'
-
-let python_highlight_all = 1 "better python syntax highlighting
-"let g:jedi#popup_on_dot = 0
-"let g:jedi#force_py_version = 3
-let g:jedi#smart_auto_mappings = 0 " don't automatically add the import stmt
-" Disable jedi autocompletion so deoplete can handle it
-let g:jedi#completions_enabled = 0
-
-" minimum setting
-let g:deoplete#enable_at_startup = 1
-call deoplete#custom#option('ignore_sources', {'typescript': ['around', 'buffer'], 'javascript': ['buffer', 'around'], 'markdown': ['around', 'buffer']})
-
-" <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
-" select first completion
-set completeopt=noinsert
-
-
 if has("nvim")
   set termguicolors
 endif 
 
 colorscheme solarized8_flat
-" alternative solarized8_dark
+"
+"
+" minimum setting
+let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('ignore_sources', {'typescript': ['around', 'buffer'], 'javascript': ['buffer', 'around'], 'markdown': ['around', 'buffer']})
+"
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" select first completion
+set completeopt=noinsert
 
 
 let g:airline#extensions#ale#enabled = 1
@@ -147,10 +126,12 @@ let g:ale_fix_on_save = 1
 let g:ale_fixers = {
 \   'javascript': ['eslint', 'prettier'],
 \   'typescript': ['eslint', 'prettier'],
+\   'dart': ['dart-format'],
 \   'css': ['prettier'],
 \}
 let g:ale_linters = {
 \   'typescript': ['eslint', 'tsserver'],
+\   'dart': ['analysis_server', 'dart_analyze', 'language_server'],
 \   'tex': [],
 \   'cpp': [],
 \}
