@@ -4,7 +4,8 @@
 mkdir -p ~/.config/nvim
 
 # vim
-ln -sf $(pwd)/init.vim ~/.config/nvim/init.vim
+ln -sf $(pwd)/init.lua ~/.config/nvim/init.lua
+ln -sf $(pwd)/lua ~/.config/nvim/lua
 ln -sf $(pwd)/ftplugin ~/.config/nvim/ftplugin
 
 # git
@@ -16,7 +17,3 @@ ln -sf $(pwd)/zshrc ~/.zshrc
 
 # flake8
 ln -sf $(pwd)/flake8.cfg ~/.config/flake8
-
-# buildout
-mkdir -p ~/.buildout
-ln -sf $(pwd)/buildout.cfg ~/.buildout/default.cfg
