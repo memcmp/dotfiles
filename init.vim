@@ -7,14 +7,14 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/Users/philipp/.config/nvim/bundles/repos/github.com/Shougo/dein.vim 
+set runtimepath+=/Users/f/.config/nvim/bundles/repos/github.com/Shougo/dein.vim 
 " Required:
-if dein#load_state('/Users/philipp/.config/nvim/bundles')
-  call dein#begin('/Users/philipp/.config/nvim/bundles')
+if dein#load_state('/Users/f/.config/nvim/bundles')
+  call dein#begin('/Users/f/.config/nvim/bundles')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/Users/philipp/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
+  call dein#add('/Users/f/.config/nvim/bundles/repos/github.com/Shougo/dein.vim')
 
   " colorscheme
   call dein#add('lifepillar/vim-solarized8')

@@ -28,6 +28,7 @@ install neovim:
 install dein:
 
 	https://github.com/Shougo/dein.vim into ~/.config/nvim/bundles
+    git clone https://github.com/Shougo/dein.vim ~/.config/nvim/bundles/dein.vim
 
 It's important that the iterm2 profile has the following settings:
 

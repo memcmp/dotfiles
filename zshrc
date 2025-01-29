@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.  ZSH=$HOME/.oh-my-zsh
 export ZSH=$HOME/.oh-my-zsh
 
-plugins=(gitfast npm)
+plugins=(gitfast npm git)
 
 
 # Set name of the theme to load.
@@ -28,6 +28,8 @@ export EDITOR=/usr/local/bin/vim
 
 export LIBRARY_PATH=/usr/local/lib
 
+export PATH=Users/f/Library/Python/3.9/bin:$PATH
+
 export PATH=$(brew --prefix ruby)/bin:$PATH
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -45,3 +47,14 @@ alias vim=nvim
 
 export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export PATH="/opt/homebrew/opt/node@16/bin:$PATH"
+export PATH="/opt/homebrew/opt/node@18/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh" || true
+
+
+# Created by `pipx` on 2024-11-11 18:10:59
+export PATH="$PATH:/Users/f/.local/bin"
+
+export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
+alias ibrew='arch -x86_64 /usr/local/bin/brew'
