@@ -16,6 +16,8 @@ alias git='LANG=en_US git'
 alias json='python -m json.tool'
 alias gpg2='gpg'
 
+alias ai='command nvim - -c "normal ggVGy" -c ":PChatNew" -c "normal p"'
+
 # kill all processes that use port $1
 portkill() {
     lsof -i :$1 | tail -n +2 | awk '{ print $2 }' | xargs kill
@@ -58,3 +60,5 @@ export PATH="$PATH:/Users/f/.local/bin"
 
 export PATH="/opt/homebrew/bin:/usr/local/bin:$PATH"
 alias ibrew='arch -x86_64 /usr/local/bin/brew'
+
+source ~/.api_keys

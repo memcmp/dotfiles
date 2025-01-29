@@ -13,6 +13,8 @@ map("n", "<Leader>r", ":ALEFindReferences -relative<CR>")
 map("n", "<Leader>h", ":ALEHover<CR>")
 map("n", "<Leader>g", ":vertical Git<CR>")
 
+vim.keymap.set({'n', 'v'}, '<Leader>cc', ':PChatNew<CR>', { noremap = true, silent = true })
+
 -- Tab completion
 vim.keymap.set("i", "<TAB>", function()
   return vim.fn.pumvisible() == 1 and "<C-n>" or "<TAB>"

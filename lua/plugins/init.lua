@@ -71,4 +71,55 @@ return {
   },
   { "plasticboy/vim-markdown" },
   { "github/copilot.vim" },
+  {
+    "frankroeder/parrot.nvim",
+    dependencies = { 'ibhagwan/fzf-lua', 'nvim-lua/plenary.nvim' },
+    -- optionally include "rcarriga/nvim-notify" for beautiful notifications
+    config = function()
+      require("parrot").setup {
+        -- Providers must be explicitly added to make them available.
+        providers = {
+          anthropic = {
+            api_key = os.getenv "ANTHROPIC_API_KEY",
+            topic = {
+                model = "claude-3-haiku-20240307",
+                params = { max_tokens = 32}
+            }
+          },
+          --gemini = {
+          --  api_key = os.getenv "GEMINI_API_KEY",
+          --},
+          --groq = {
+          --  api_key = os.getenv "GROQ_API_KEY",
+          --},
+          --mistral = {
+          --  api_key = os.getenv "MISTRAL_API_KEY",
+          --},
+          --pplx = {
+          --  api_key = os.getenv "PERPLEXITY_API_KEY",
+          --},
+          ---- provide an empty list to make provider available (no API key required)
+          --ollama = {},
+          --openai = {
+          --  api_key = os.getenv "OPENAI_API_KEY",
+          --},
+          github = {
+            api_key = os.getenv "GITHUB_API_KEY",
+          },
+          --nvidia = {
+          --  api_key = os.getenv "NVIDIA_API_KEY",
+          --},
+          --xai = {
+          --  api_key = os.getenv "XAI_API_KEY",
+          --},
+        },
+        cmd_prefix = "P",
+        -- Local chat buffer shortcuts
+        chat_shortcut_respond = { modes = { "n", "i", "v", "x" }, shortcut = "<leader>cc" },
+        chat_shortcut_delete = { modes = { "n", "i", "v", "x" }, shortcut = "<leader>cd" },
+        chat_shortcut_stop = { modes = { "n", "i", "v", "x" }, shortcut = "<leader>cs" },
+        chat_shortcut_new = { modes = { "n", "i", "v", "x" }, shortcut = "<leader>cn" },
+      }
+    end,
+  }
 }
