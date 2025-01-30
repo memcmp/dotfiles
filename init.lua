@@ -18,8 +18,7 @@ vim.g["deoplete#enable_at_startup"] = 1
 
 require("config.lazy")
 
---vim.api.nvim_set_hl(0, 'LineNr', { bg='none' })
-vim.api.nvim_command('highlight clear LineNr')
+
 
 local map = vim.keymap.set
 

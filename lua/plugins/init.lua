@@ -1,29 +1,15 @@
 return {
-  --{
-  --  "lifepillar/vim-solarized8",
-  --  branch="neovim",
-  --  config = function()
-  --    vim.cmd("colorscheme solarized8_flat")
-  --  end,
-  --},
-  --{
-  --    "shaunsingh/solarized.nvim",
-  --    config = function()
-  --        require("solarized").set();
-  --    end,
-  --},
-  --
-  --{
-  --  "Tsuzat/NeoSolarized.nvim",
-  --  lazy=false,
-  --  priority=1000,
-  --},
   {"ishan9299/nvim-solarized-lua",
     config = function()
-        vim.cmd('colorscheme solarized')
-        vim.cmd('highlight clear LineNr')
+      vim.api.nvim_create_autocmd("ColorScheme", {
+          pattern = "*",
+          callback = function()
+              vim.api.nvim_set_hl(0, 'LineNr', { bg='none' })
+          end
+      })
+      vim.cmd('colorscheme solarized')
+      vim.g.solarized_italics = 0
     end
-
   },
   { "JazzCore/vim-python-syntax" },
   {
@@ -45,9 +31,6 @@ return {
       vim.g.fzf_layout = { down = "20" }
     end,
   },
-  --{ "leafgarland/typescript-vim" },
-  --{ "ianks/vim-tsx" },
-  --{ "othree/yajs.vim" },
   {
     "dense-analysis/ale",
     config = function()
